@@ -6,7 +6,7 @@ public class Client {
 
         String message = "Hi good morning have a  nice day!.";
 //        SMSService smsService = new SMSService();
-        EmailService emailService = new EmailService();
+//        EmailService emailService = new EmailService();
 //        MessageSender messageSender = new MessageSender(smsService);
         MessageSender messageSender = new MessageSender(emailService);
         messageSender.sendMessage(message);
