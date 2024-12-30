@@ -2,11 +2,28 @@ package com.spring.core.di;
 
 
 class DependencyA {
+    private DependencyB dependencyB;
 
+//    public DependencyA(DependencyB dependencyB) {
+//        this.dependencyB = dependencyB;
+//    }
+
+
+    public void setDependencyB(DependencyB dependencyB) {
+        this.dependencyB = dependencyB;
+    }
 }
 
 class DependencyB {
+    private DependencyA dependencyA;
 
+//    public DependencyB(DependencyA dependencyA) {
+//        this.dependencyA = dependencyA;
+//    }
+
+    public void setDependencyA(DependencyA dependencyA) {
+        this.dependencyA = dependencyA;
+    }
 }
 
 class DependencyC {
