@@ -2,7 +2,7 @@ package com.spring.core.di;
 
 import org.springframework.stereotype.Component;
 
-@Component("emailService")
+@Component
 public class EmailService implements MessageService{
 
     @Override

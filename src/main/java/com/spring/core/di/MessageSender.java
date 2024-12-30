@@ -18,14 +18,26 @@ public class MessageSender {
 //    }
 
     private MessageService messageService;
+    private MessageService smsService;
 
-    @Autowired
+//    @Autowired
     public MessageSender(@Qualifier("emailService") MessageService messageService) {
 
         this.messageService = messageService;
+        System.out.println("constructor based dependency injection 1");
+    }
+
+    @Autowired
+    public MessageSender(@Qualifier("emailService") MessageService messageService,
+                         @Qualifier("smsService") MessageService smsService) {
+        this.messageService = messageService;
+        this.smsService = smsService;
+        System.out.println("constructor based dependency injection 2");
     }
 
     public void sendMessage(String message) {
+
         this.messageService.sendMessage(message);
+        this.smsService.sendMessage(message);
     }
 }
