@@ -17,7 +17,12 @@ public class MessageSender {
 //        this.smsService.sendMessage(message);
 //    }
 
-    private MessageService messageService;
+    @Autowired
+    @Qualifier("emailService")
+    private  MessageService messageService;
+//    private final MessageService messageService;
+
+    @Autowired
     private MessageService smsService;
 
 ////    @Autowired
@@ -36,17 +41,17 @@ public class MessageSender {
 //    }
 
 
-    @Autowired
-    public void setMessageService(@Qualifier("emailService") MessageService messageService) {
-        this.messageService = messageService;
-        System.out.println("setter based dependency injection 1");
-    }
-
-    @Autowired
-    public void setSmsService(@Qualifier("smsService") MessageService smsService) {
-        this.smsService = smsService;
-        System.out.println("setter based dependency injection 2");
-    }
+//    @Autowired
+//    public void setMessageService(@Qualifier("emailService") MessageService messageService) {
+//        this.messageService = messageService;
+//        System.out.println("setter based dependency injection 1");
+//    }
+//
+//    @Autowired
+//    public void setSmsService(@Qualifier("smsService") MessageService smsService) {
+//        this.smsService = smsService;
+//        System.out.println("setter based dependency injection 2");
+//    }
 
     public void sendMessage(String message) {
 
